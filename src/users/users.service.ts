@@ -21,12 +21,12 @@ export class UsersService {
     return this.userModel.findOne({ email }).exec();
   }
 
-  async login(loginDto: LoginDto) {
-    const { email, password } = loginDto;
-    const user = await this.userModel.findOne({ email }).exec();
-    if (user && user.password === password) {
-      return user;
-    }
-    return null;
-  }
+  // async login(loginDto: LoginDto) {
+  //   const { email, password } = loginDto;
+  //   const user = await this.userModel.findOne({ email }).exec();
+  //   if (user && user.password === password) {
+  //     return user;
+  //   }
+  //   return null;
+  // }
 }

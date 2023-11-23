@@ -9,10 +9,10 @@ export class UsersController {
   findAll() {
     return 'This action returns all auths';
   }
-  @Get('login')
-  async loginUser(@Body() loginDto: LoginDto) {
-    return this.usersService.login(loginDto);
-  }
+  // @Get('login')
+  // async loginUser(@Body() loginDto: LoginDto) {
+  //   return this.usersService.login(loginDto);
+  // }
 
   @Post('register')
   createUser(@Body() createUserDto: RegistrationDto) {
