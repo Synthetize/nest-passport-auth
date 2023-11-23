@@ -6,8 +6,5 @@ export class LoginDto {
   readonly email: string;
 
   @IsNotEmpty()
-  readonly userId: ObjectId;
-
-  @IsNotEmpty()
-  readonly name: string;
+  readonly password: string;
 }
