@@ -10,6 +10,9 @@ export class User {
   @Prop({ type: 'ObjectId', auto: true })
   _id: ObjectId;
 
+  @Prop()
+  salt: string;
+
   @Prop({ required: true })
   name: string;
 

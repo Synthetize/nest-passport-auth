@@ -20,7 +20,7 @@ export class RegistrationDto {
 
   @IsNotEmpty()
   @IsString()
-  @MinLength(8)
+  //@MinLength(8)
   // @Matches(
   //   /^(?=[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/,
   //   {
@@ -28,5 +28,5 @@ export class RegistrationDto {
   //       'La password deve iniziare con una lettera maiuscola, contenere almeno un numero e un carattere speciale, e avere una lunghezza minima di 8 caratteri',
   //   },
   // )
-  readonly password: string;
+  password: string;
 }
