@@ -2,11 +2,11 @@ import { Module, ValidationPipe } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
-import config from './constants';
+import { dbConfig } from "./constants";
 import { APP_PIPE } from '@nestjs/core';
 
 @Module({
-  imports: [AuthModule, UsersModule, MongooseModule.forRoot(config.DB_URI)],
+  imports: [AuthModule, UsersModule, MongooseModule.forRoot(dbConfig.uri)],
   controllers: [],
   providers: [
     {
