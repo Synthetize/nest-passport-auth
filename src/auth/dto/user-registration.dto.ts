@@ -1,6 +1,6 @@
 import {
-  IsEmail,
-  IsNotEmpty,
+  IsEmail, IsEnum,
+  IsNotEmpty, IsOptional,
   IsString,
   Matches,
   MinLength,
@@ -29,4 +29,9 @@ export class RegistrationDto {
   //   },
   // )
   password: string;
+
+  //todo: prendere l'enum da userschema
+  @IsOptional()
+  @IsEnum(['ADMIN', 'USER'])
+  readonly role: string;
 }

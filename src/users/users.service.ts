@@ -2,8 +2,9 @@ import {HttpException, Injectable} from '@nestjs/common';
 import {InjectModel} from '@nestjs/mongoose';
 import {Model} from 'mongoose';
 import {User} from './schemas/user.schema';
-import {RegistrationDto} from './dto/user-registration.dto';
+import {RegistrationDto} from '../auth/dto/user-registration.dto';
 import {bcryptConfig} from '../constants';
+import {AccountCreationException} from "./exceptions/account-creation.exception";
 
 const bcrypt = require('bcrypt');
 
@@ -24,8 +25,7 @@ export class UsersService {
             salt: salt,
         });
         if (!user) {
-            //todo: throw custom exception
-            throw new HttpException('User not created', 500);
+            throw new AccountCreationException('Account creation failed');
         }
         return {
             success: true,

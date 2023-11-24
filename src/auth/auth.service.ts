@@ -30,6 +30,7 @@ export class AuthService {
       sub: {
         userId: user._id,
         name: user.name,
+        role: user.role,
       },
     };
     return {
