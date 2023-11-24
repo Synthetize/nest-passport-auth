@@ -23,6 +23,7 @@ export class AuthService {
     }
     return user;
   }
+
   async generateTokenAfterCorrectLogin(user: User) {
     const payload = {
       email: user.email,
